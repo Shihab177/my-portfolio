@@ -19,7 +19,7 @@ const About = () => {
   ];
   return (
     <div className="">
-      <div id="about" className="pb-20  md:container mx-auto flex">
+      <div id="about" className="pb-20  md:container mx-auto md:flex  flex-col-reverse">
         <div className="w-[40%] ">
           <img
             className="rounded-md h-100 w-100 mt-[100px] "

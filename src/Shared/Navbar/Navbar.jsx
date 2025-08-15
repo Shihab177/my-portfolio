@@ -1,52 +1,128 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
+import {
+  HiHome,
+  HiUser,
+  HiLightBulb,
+  HiBriefcase,
+  HiAcademicCap,
+  HiMail,
+  HiMenuAlt1,
+} from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
+
 const Navbar = () => {
-   const [scroll, setScroll] = useState(false);
+  const [scroll, setScroll] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   // scroll handler
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) { // 50px scroll হলে shadow show
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
+      setScroll(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const links = [
-    { to: "hero", name: "Home" },
-    { to: "about", name: "About" },
-    { to: "skills", name: "Skills" },
-    { to: "projects", name: "Projects" },
-    { to: "education", name: "Education" },
-    { to: "contact", name: "Contact" },
+    { to: "hero", name: "Home", icon: <HiHome size={20} /> },
+    { to: "about", name: "About", icon: <HiUser size={20} /> },
+    { to: "skills", name: "Skills", icon: <HiLightBulb size={20} /> },
+    { to: "projects", name: "Projects", icon: <HiBriefcase size={20} /> },
+    { to: "education", name: "Education", icon: <HiAcademicCap size={20} /> },
+    { to: "contact", name: "Contact", icon: <HiMail size={20} /> },
   ];
-  
+
   return (
-    <nav className={`h-20 fixed top-0 left-0 w-full z-50 ${scroll ? "shadow-md bg-gray-800":""}`}>
-      <div className="md:container mx-auto h-full flex justify-between items-center text-white">
-        <div className="w-[60%]">
-          <h1 className="text-[30px] font-semibold">Shihab <span className="text-[#7cf03d]">Islam</span></h1>
+    <>
+      {/* Navbar */}
+      <nav
+        className={`md:h-20 h-[56px] fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          scroll ? "shadow-md bg-gray-800" : "bg-black"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
+          <div className="">
+            <h1 className="md:text-[30px] text-[20px] font-semibold">
+              Shihab <span className="text-[#7cf03d]">Islam</span>
+            </h1>
+          </div>
+
+          {/* Desktop Links */}
+          <div className="hidden lg:flex gap-6 xl:gap-8 font-medium">
+            {links.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                smooth={true}
+                duration={500}
+                spy={true}
+                activeClass="active-section"
+                offset={-80}
+                className="cursor-pointer hover:text-[#7cf03d] 
+                 text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] xl:text-[20px]"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <HiMenuAlt1
+              size={27}
+              className="cursor-pointer"
+              onClick={() => setMenuOpen(true)}
+            />
+          </div>
         </div>
-        <div className="text-[20px] font-medium flex justify-between w-[40%]">
+      </nav>
+
+      {/* Overlay */}
+      <div
+        onClick={() => setMenuOpen(false)}
+        className={`lg:hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      />
+
+      {/* Side Menu */}
+      <div
+        className={`lg:hidden fixed top-0 right-0 w-64 h-full bg-gray-900 text-white z-50 transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Header */}
+        <div className="flex justify-between items-center p-4 border-b border-gray-700">
+          <h2 className="text-lg font-semibold">Menu</h2>
+          <IoClose
+            size={28}
+            className="cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          />
+        </div>
+
+        {/* Menu Links */}
+        <ul className="flex flex-col p-4 space-y-4">
           {links.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to} // section id
-              smooth={true} // smooth scroll
-              duration={500} // scroll speed
-              spy={true} // detect active section
-              activeClass="active-section"
-              offset={-80} // navbar height adjust
-              className="hover:text-[#7cf03d] cursor-pointer"
-            >
-              {link.name}
-            </Link>
+            <li key={link.to}>
+              <Link
+                to={link.to}
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-80}
+                className="flex items-center gap-3 hover:text-[#7cf03d] cursor-pointer"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.icon}
+                {link.name}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -5,10 +5,10 @@ import Footer from '../Shared/Footer/Footer';
 
 const RootLayout = () => {
     return (
-        <div>
+        <div className=''>
             <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
             
         </div>
     );

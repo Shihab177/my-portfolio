@@ -124,7 +124,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className="text-white h-screen md:container mx-auto pt-8"
+      className="text-white pb-20 md:container mx-auto pt-8"
     >
       <h1 className="text-center text-[30px] font-semibold ">
         Featured <span className="text-[var(--primary-color)]">Projects</span>

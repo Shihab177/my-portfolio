@@ -23,3 +23,4 @@
 .animate-slow-bounce {
   animation: slow-bounce 2s infinite; /* 2s হলো স্পিড, বড় করলে ধীর বাউন্স হবে */
 }
+

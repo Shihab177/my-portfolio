@@ -7,13 +7,15 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="md:container mx-auto h-screen text-white flex items-center justify-between "
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen text-white flex flex-col-reverse  lg:flex-row md:items-center lg:justify-between gap-8"
     >
       {/*hero-info*/}
-      <div className="w-[60%]">
-        <h1 className="text-[55px] font-bold">Hi, It’s Shihab</h1>
-        <div className="xl:text-[32px] md:text-[24px] mt-[-10px] font-semibold inline-block">
-          <span style={{ color: "white" }}>I'm a</span>
+      <div className="w-full lg:w-[60%] text-center lg:text-left  -translate-y-22 md:-translate-y-0">
+        <h1 className="text-[32px] sm:text-[40px] md:text-[48px] lg:text-[55px] font-bold">
+          Hi, It’s Shihab
+        </h1>
+        <div className="text-[15px] sm:text-[22px] md:text-[23px] xl:text-[30px] mt-[-5px] font-semibold inline-block">
+          <span className="text-white">I'm a</span>{" "}
           <TypeAnimation
             sequence={[
               " MERN Stack Developer",
@@ -26,56 +28,57 @@ const Hero = () => {
             repeat={Infinity}
           />
         </div>
-        <p className="text-[16px] mt-[10px] mb-[25px]">
-        Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase, focused on building responsive web applications. Open to remote or on-site opportunities to apply skills and gain teamwork experience.
+        <p className="text-[14px] sm:text-[15px] md:text-[16px] mt-[10px] mb-[25px] max-w-xl mx-auto lg:mx-0">
+          Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase, focused on building responsive web applications. Open to remote or on-site opportunities to apply skills and gain teamwork experience.
         </p>
-        <div className="flex items-center gap-5">
-          <button className="py-[10px] px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)]  transition-all duration-500 ease-in-out">
+        <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 md:justify-center lg:justify-start">
+          <button className="py-[10px] px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
             Download Resume
           </button>
-          <div className="flex gap-2">
-            <a
-              className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-              href="https://github.com/Shihab177" target="_blank"
-            >
-              <FaGithub />
-            </a>
-            <a
-              className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-              href="https://www.linkedin.com/in/shihab-islam77/" target="_blank"
-            >
-              <FaLinkedinIn />
-            </a>
-            <a
-              className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-              href="https://www.facebook.com/sk.shihab.73594" target="_blank"
-            >
-              <FaFacebookF />
-            </a>
-            <a
-              className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-              href="http://www.youtube.com/@ultracoder-j3i" target="_blank"
-            >
-              <FaYoutube />
-            </a>
-
-            <a
-              className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
-              href=""
-            >
-              <FaXTwitter />
-            </a>
+          <div className="flex gap-2 ">
+            {[
+              {
+                icon: <FaGithub />,
+                link: "https://github.com/Shihab177",
+              },
+              {
+                icon: <FaLinkedinIn />,
+                link: "https://www.linkedin.com/in/shihab-islam77/",
+              },
+              {
+                icon: <FaFacebookF />,
+                link: "https://www.facebook.com/sk.shihab.73594",
+              },
+              {
+                icon: <FaYoutube />,
+                link: "http://www.youtube.com/@ultracoder-j3i",
+              },
+              {
+                icon: <FaXTwitter />,
+                link: "",
+              },
+            ].map((item, index) => (
+              <a
+                key={index}
+                className="p-2 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[18px] sm:text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out"
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {item.icon}
+              </a>
+            ))}
           </div>
         </div>
       </div>
+
       {/*hero-img*/}
-      <div className="flex justify-end  w-[40%]">
-        <div className="bg-[var(--primary-color)] rounded-full relative w-[500px] h-[500px] flex justify-center overflow-hidden shadow-[0_0_25px_#7cf03d] transition-all duration-500 ease-in-out">
-         
+      <div className="flex justify-center lg:justify-end w-full lg:w-[40%] -translate-y-38 md:-translate-y-0">
+        <div className=" bg-[var(--primary-color)] rounded-full relative w-[250px] sm:w-[300px] md:w-[380px] lg:w-[500px] aspect-square flex justify-center overflow-hidden shadow-[0_0_25px_#7cf03d] transition-all duration-500 ease-in-out">
           <img
-            className=" w-[400px] hover:shadow-[0_0_25px_#7cf03d,0_0_50px_#7cf03d,0_0_100px_#7cf03d]"
-            src="https://i.ibb.co.com/vvc1MkpS/shihab-removebg-preview.png "
-            alt=""
+            className="w-[200px] sm:w-[250px] md:w-[320px] lg:w-[400px] hover:shadow-[0_0_25px_#7cf03d,0_0_50px_#7cf03d,0_0_100px_#7cf03d]"
+            src="https://i.ibb.co.com/vvc1MkpS/shihab-removebg-preview.png"
+            alt="Shihab"
           />
         </div>
       </div>
