@@ -32,7 +32,7 @@ const Hero = () => {
           Fresher skilled in React, Node.js, Express.js, MongoDB, and Firebase, focused on building responsive web applications. Open to remote or on-site opportunities to apply skills and gain teamwork experience.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 md:justify-center lg:justify-start">
-          <button className="py-[10px] px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
+          <button className="py-[10px] cursor-pointer px-[25px] sm:px-[30px] bg-[var(--primary-color)] rounded-[40px] border-2 border-[var(--primary-color)] shadow-[0_0_10px_#7cf03d] text-[14px] sm:text-[16px] font-semibold hover:bg-transparent hover:shadow-none text-black hover:text-[var(--primary-color)] transition-all duration-500 ease-in-out">
             Download Resume
           </button>
           <div className="flex gap-2 ">

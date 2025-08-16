@@ -173,7 +173,7 @@ const Skills = () => {
             item && (
               <p
                 key={colIndex}
-                className="bg-[#1B2949]  py-2 px-4  rounded-4xl hover:shadow-lg transition-shadow duration-300 shadow-xl text-blue-200 font-medium text-[14px]"
+                className="bg-[#1B2949]  py-2 px-4  rounded-4xl hover:shadow-lg transition-shadow duration-300 shadow-xl text-blue-200 border border-gray-700 font-medium text-[14px]"
               >
                 
                   {item}
