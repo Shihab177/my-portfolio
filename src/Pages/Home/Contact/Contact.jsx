@@ -148,7 +148,7 @@ const Contact = () => {
                   {...register("name", {
                     required: "Name is required",
                   })}
-                  className={`py-2 px-4 bg-black  placeholder:text-gray-200 ${errors.name ? "border-red-500" : ""}`}
+                  className={`py-2 px-4 bg-black w-full  placeholder:text-gray-200 ${errors.name ? "border-red-500" : ""}`}
                   placeholder="Your name"
                 />
                 {errors.name && (
@@ -168,7 +168,7 @@ const Contact = () => {
                       message: "Invalid email address",
                     },
                   })}
-                   className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.email ? "border-red-500" : ""}`}
+                   className={`py-2 px-4 bg-black w-full shadow-md rounded-md placeholder:text-gray-200 ${errors.email ? "border-red-500" : ""}`}
                   
                   placeholder="your@email.com"
                 />
