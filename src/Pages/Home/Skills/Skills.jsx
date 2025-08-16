@@ -121,12 +121,12 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="text-white pb-20 pt-8 md:container mx-auto"
+      className="text-white max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4 pt-8"
     >
-      <h1 className="text-[30px] font-semibold text-center ">
+      <h1 className="lg:text-[36px] md:text-[30px] text-[24px] font-semibold text-center ">
         Skills & <span className="text-[var(--primary-color)]">Expertise</span>
       </h1>
-      <p className="text-[16px] text-center font-medium mt-4 mb-14">
+      <p className="text-[16px] text-center font-medium mt-4 lg:mb-14 md:mb-8 mb-6">
         Here are the technologies and tools I work with to create amazing
         digital <br />
         experiences.
@@ -149,25 +149,25 @@ const Skills = () => {
         ))}
       </div>
       {/* Items List */}
-      <div className="mt-12 flex gap-8 items-center w-full justify-between">
-        {activeCategory?.frontend.map((skill, index) => (
-          <div
-            key={index}
-            className="bg-gray-800 py-8 rounded-md shadow hover:bg-gray-700 border border-gray-700  flex flex-col gap-4 items-center w-80"
-          >
-            <img
-              className="h-15 w-15 rounded-md animate-slow-bounce"
-              src={skill.image}
-              alt=""
-            />
-            <p className="font-medium text-[16px]"> {skill.name}</p>
-          </div>
-        ))}
-      </div>
+     <div className="lg:mt-12 md:mt-8 mt-6 grid grid-cols-2 md:grid-cols-3  lg:grid-cols-6 lg:gap-8 md:gap-6 gap-4 items-center w-full">
+  {activeCategory?.frontend.map((skill, index) => (
+    <div
+      key={index}
+      className="bg-gray-800 xl:py-8 lg:py-6 md:py-10 py-4 rounded-md shadow hover:bg-gray-700 border border-gray-700 flex flex-col gap-4 items-center"
+    >
+      <img
+        className="h-15 w-15 rounded-md animate-slow-bounce"
+        src={skill.image}
+        alt={skill.name}
+      />
+      <p className="font-medium text-[16px]">{skill.name}</p>
+    </div>
+  ))}
+</div>
 
-      <div className="mt-14 w-full">
-        <h1 className="text-[24px] font-medium text-center mb-7">Always <span className="text-[var(--primary-color)]">Learning</span></h1>
-        <div className=" flex justify-center gap-4">
+      <div className="lg:mt-14 md:mt-8 mt-6 w-full">
+        <h1 className="text-[24px] font-medium text-center mb-4 md:mb-6 lg:mb-7">Always <span className="text-[var(--primary-color)]">Learning</span></h1>
+        <div className=" flex justify-center gap-4 flex-wrap">
         {AlwaysLearning.map(
           (item, colIndex) =>
             item && (

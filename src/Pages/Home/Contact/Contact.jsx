@@ -68,26 +68,26 @@ const Contact = () => {
     }
 };
   return (
-    <div id="contact" className="h-screen pt-8 md:container mx-auto">
-      <h1 className="text-[30px] text-center text-white font-semibold">
+    <div id="contact" className=" pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4">
+      <h1 className="lg:text-[30px] md:text-[30px] text-[24px] text-center text-white font-semibold">
         Get In <span className="text-[var(--primary-color)]"> Touch</span>
       </h1>
       <p className="text-[16px] mt-4 text-white max-w-[600px] mx-auto text-center">
         Have a project in mind or just want to say hello? I'd love to hear from
         you. Let's create something amazing together!
       </p>
-      <div className="mt-14 flex gap-10">
+      <div className="lg:mt-14 md:mt-8 mt-6 flex lg:flex-row flex-col gap-10">
         {/*left */}
-        <div className="w-1/2">
-          <h2 className="text-[24px] text-white font-semibold">
+        <div className="lg:w-1/2">
+          <h2 className="text-[20px] text-white font-semibold">
             Let's Start a Conversation
           </h2>
-          <p className="text-[16px] text-gray-200">
+          <p className="text-[13px] md:text-[16px] text-gray-200">
             I'm always open to discussing new opportunities, interesting
             projects, or just having a chat about technology and innovation.
           </p>
           {/* Contact Details */}
-          <div className="mt-8">
+          <div className="lg:mt-8 md:mt-6 mt-4">
             {contactInfo.map((item) => {
               const Icon = item.icon;
               return (
@@ -99,18 +99,18 @@ const Contact = () => {
                   
                 >
                   <div className="p-4 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out">
-                    <Icon className="h-6 w-6" />
+                    <Icon className="md:h-6 md:w-6 h-4 w-4" />
                   </div>
                   <div className="text-gray-200">
                     <p className="text-sm">{item.label}</p>
-                    <p className="text-lg font-medium">{item.value}</p>
+                    <p className="md:text-lg text-[15px] font-medium">{item.value}</p>
                   </div>
                 </a>
               );
             })}
           </div>
           {/* Social Links */}
-          <div className="mt-10">
+          <div className="lg:mt-8 md:mt-6 mt-4">
             <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => {
@@ -124,7 +124,7 @@ const Contact = () => {
                     className={`p-4 border-2 border-[var(--primary-color)] rounded-full text-[var(--primary-color)] text-[20px] hover:bg-[var(--primary-color)] hover:text-[#1f242d] hover:shadow-[0_0_10px_#7cf03d] transition-all duration-500 ease-in-out`}
                     
                   >
-                    <Icon className="h-5 w-5" />
+                    <Icon className="md:h-5 md:w-5 h-4 w-4" />
                     <span className="sr-only">{social.label}</span>
                   </a>
                 );
@@ -133,12 +133,12 @@ const Contact = () => {
           </div>
         </div>
         {/*right*/}
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           {/* Contact Form */}
 
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="space-y-6 bg-[#111826] p-8 rounded-2xl text-white"
+            className="space-y-6 bg-[#111826] p-8 shadow-md rounded-md border-2 border-gray-700 text-white"
           >
             <div className="grid md:grid-cols-2 gap-4">
               <div className="flex flex-col gap-y-2">
@@ -148,7 +148,7 @@ const Contact = () => {
                   {...register("name", {
                     required: "Name is required",
                   })}
-                  className={`py-2 px-4 bg-black shadow-md rounded-md placeholder:text-gray-200 ${errors.name ? "border-red-500" : ""}`}
+                  className={`py-2 px-4 bg-black  placeholder:text-gray-200 ${errors.name ? "border-red-500" : ""}`}
                   placeholder="Your name"
                 />
                 {errors.name && (

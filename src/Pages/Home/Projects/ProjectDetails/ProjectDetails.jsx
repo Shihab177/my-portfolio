@@ -147,9 +147,9 @@ const ProjectDetails = () => {
   ];
   const detailsData = project.find((data) => data.id === parseInt(id));
   return (
-    <div className=" pb-20">
+    <div className=" lg:pb-20 pb-12 mb:pb-16">
       <div className={`h-18 fixed top-0 left-0 w-full z-50  border-b border-gray-600 ${scroll ? "shadow-md bg-gray-800":""}`}>
-        <div className="max-w-6xl mx-auto flex items-center h-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-full">
           <Link to="/">
             <button className="flex items-center gap-2 px-3 py-2 text-[16px] bg-gray-800 font-medium border-gray-600 border-2 text-gray-200 hover:bg-gray-700 hover:text-white rounded-md ">
               <span className="">
@@ -160,13 +160,13 @@ const ProjectDetails = () => {
           </Link>
         </div>
       </div>
-      <div className="md:container mx-auto pt-19">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-19">
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="md:my-10 mt-5 pb-10 max-w-6xl mx-auto px-4 "
+          className="md:my-10 mt-5 pb-10"
         >
           <Swiper
             spaceBetween={30}
@@ -193,24 +193,24 @@ const ProjectDetails = () => {
         </motion.section>
       </div>
       {/*content info */}
-      <div className="max-w-6xl mt-15 mx-auto flex gap-15 ">
-        <div className="w-[70%] ">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-15 mt-5 md:mt-0 lg:flex gap-15 ">
+        <div className="lg:w-[70%] ">
           <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
             <FaFileAlt className="text-[#7cf03d]" />
             Project Overview
           </h2>
 
-          <p className="text-gray-200 text-[16px] mt-5">
+          <p className="text-gray-200 text-[15px] md:text-[16px] mt-5">
             {detailsData.overview}
           </p>
-          <div className="mt-18">
+          <div className="lg:mt-15 mt-5 md:mt-8">
             <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
               <FaExclamationTriangle className="text-[#7cf03d]" />
               Challenges Faced
             </h2>
             {detailsData.Challenges.map((cha, index) => (
               <div
-                className="flex items-center text-gray-200 text-[16px] gap-x-5 mt-5"
+                className="flex items-center text-gray-200 text-[15px] md:text-[16px] gap-x-5 mt-5"
                 key={index}
               >
                 <div className="h-[12px] w-[12px] rounded-full bg-red-500 flex-shrink-0"></div>
@@ -218,14 +218,14 @@ const ProjectDetails = () => {
               </div>
             ))}
           </div>
-          <div className="mt-18">
+          <div className="lg:mt-15 mt-5 md:mt-8">
             <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
               <TrendingUp className="text-[#7cf03d]" />
               Future Improvements
             </h2>
             {detailsData.Challenges.map((cha, index) => (
               <div
-                className="flex items-center text-gray-200 text-[16px] gap-x-5 mt-5"
+                className="flex items-center text-gray-200 text-[15px] md:text-[16px] gap-x-5 mt-5"
                 key={index}
               >
                 <div className="h-[12px] w-[12px] rounded-full bg-[#7cf03d] flex-shrink-0"></div>
@@ -235,8 +235,8 @@ const ProjectDetails = () => {
           </div>
         </div>
         {/*right */}
-        <div className="w-[30%]">
-          <h2 className="text-[24px] font-semibold text-white flex items-center gap-4">
+        <div className="lg:w-[30%] lg:mt-0 mt-5 md:mt-8">
+          <h2 className="text-[24px] font-semibold text-white flex items-center gap-4 ">
             <FaTools className="text-[#7cf03d]" />
             Technology Stack
           </h2>

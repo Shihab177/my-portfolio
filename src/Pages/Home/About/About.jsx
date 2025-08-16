@@ -19,17 +19,17 @@ const About = () => {
   ];
   return (
     <div className="">
-      <div id="about" className="pb-20  md:container mx-auto md:flex  flex-col-reverse">
-        <div className="w-[40%] ">
+      <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4 flex flex-col-reverse lg:flex-row lg:gap-x-16 xl:gap-x-22">
+        <div className="lg:w-[40%] hidden lg:flex">
           <img
-            className="rounded-md h-100 w-100 mt-[100px] "
+            className="rounded-md h-100 w-full mt-[100px] "
             src="https://i.ibb.co.com/pvBS30z6/a.png"
             alt=""
           />
         </div>
-        <div className="w-[60%] text-white">
-          <h1 className="text-[30px] font-semibold mt-8">About <span className="text-[var(--primary-color)]">Me</span></h1>
-          <p className="mt-8 w-150 text-gray-200">
+        <div className="lg:w-[60%] text-white">
+          <h1 className="lg:text-[36px] md:text-[30px] text-[24px] font-semibold mt-0 md:mt-16 lg:mt-8">About <span className="text-[var(--primary-color)]">Me</span></h1>
+          <p className="lg:mt-8 md:mt-6 mt-4  text-gray-200">
             I began my programming journey in 2023, learning HTML, CSS, and
             JavaScript on my mobile due to the lack of a laptop. From 2024, I
             focused entirely on web development, learning the MERN stack through
@@ -46,11 +46,11 @@ const About = () => {
             new skills.
           </p>
           <div className="">
-            <h1 className="text-2xl mt-8 font-bold text-white mb-4">
+            <h1 className="text-2xl lg:mt-8 md:mt-6 mt-4 font-bold text-white mb-4">
               Interests & Hobbies
             </h1>
 
-            <div className=" flex gap-4 w-150 flex-wrap">
+            <div className=" flex gap-4  flex-wrap">
               {interests.map(
                 (item, colIndex) =>
                   item && (

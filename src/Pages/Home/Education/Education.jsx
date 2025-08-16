@@ -44,18 +44,18 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  md:pt-8">
+    
+      <div id="education" className="pt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
-          className="text-center mb-16"
+          className="text-center lg:mb-14 md:mb-8 mb-6"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-[30px] font-semibold text-white mb-4"
+            className="lg:text-[36px] md:text-[30px] text-[24px] font-semibold text-white mb-4"
           >
             Education{" "}
             <span className="text-[var(--primary-color)]">Background</span>
@@ -105,10 +105,10 @@ const Education = () => {
                   }`}
                 >
                   <motion.div
-                    className="bg-[#111826] dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    className="bg-[#111826] dark:bg-gray-800 p-6 rounded-md shadow-2xl hover:shadow-xl transition-shadow duration-300 border-2 border-gray-700"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-start justify-between mb-4 ">
                       <div
                         className={`${index % 2 === 0 ? "md:text-right" : ""}`}
                       >
@@ -162,7 +162,7 @@ const Education = () => {
           </div>
         </motion.div>
       </div>
-    </section>
+    
   );
 };
 

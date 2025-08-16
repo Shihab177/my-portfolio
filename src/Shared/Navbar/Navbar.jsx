@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
 import {
   HiHome,
   HiUser,
@@ -10,18 +9,39 @@ import {
   HiMenuAlt1,
 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
-
+import { Link, animateScroll as scroll } from "react-scroll";
+import scrollSpy from "react-scroll/modules/mixins/scroll-spy";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [offset, setOffset] = useState(-80);
 
   // scroll handler
   useEffect(() => {
+     scrollSpy.update(); 
     const handleScroll = () => {
-      setScroll(window.scrollY > 0);
+      if (window.scrollY > 50) {
+        // 50px scroll হলে shadow show
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setOffset(-56); // Mobile navbar height
+      } else {
+        setOffset(-80); // Desktop navbar height
+      }
+    };
+
+    handleResize(); // প্রথমবার রান করবে
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const links = [
@@ -38,7 +58,7 @@ const Navbar = () => {
       {/* Navbar */}
       <nav
         className={`md:h-20 h-[56px] fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          scroll ? "shadow-md bg-gray-800" : "bg-black"
+          scroll ? "shadow-md bg-gray-800" : ""
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex justify-between items-center text-white">
@@ -58,7 +78,7 @@ const Navbar = () => {
                 duration={500}
                 spy={true}
                 activeClass="active-section"
-                offset={-80}
+                offset={offset}
                 className="cursor-pointer hover:text-[#7cf03d] 
                  text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] xl:text-[20px]"
               >
