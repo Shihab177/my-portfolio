@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen text-white flex justify-center flex-col-reverse  lg:flex-row lg:items-center lg:justify-between gap-8"
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen text-white flex justify-center flex-col-reverse  lg:flex-row lg:items-center lg:justify-between gap-5 md:gap-8"
     >
       {/*hero-info*/}
       <div className="w-full lg:w-[60%] text-center lg:text-left ">
@@ -73,7 +73,7 @@ const Hero = () => {
       </div>
 
       {/*hero-img*/}
-      <div className="flex justify-center lg:justify-end w-full lg:w-[40%] mt-14 md:mt-0">
+      <div className="flex justify-center lg:justify-end w-full lg:w-[40%] pt-22 md:mt-0">
         <div className=" bg-[var(--primary-color)] rounded-full relative w-[250px] sm:w-[300px] md:w-[380px] lg:w-[500px] aspect-square flex justify-center overflow-hidden shadow-[0_0_25px_#7cf03d] transition-all duration-500 ease-in-out">
           <img
             className="w-[200px] sm:w-[250px] md:w-[320px] lg:w-[400px] hover:shadow-[0_0_25px_#7cf03d,0_0_50px_#7cf03d,0_0_100px_#7cf03d]"

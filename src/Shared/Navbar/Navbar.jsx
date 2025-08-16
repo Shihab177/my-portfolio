@@ -14,13 +14,13 @@ import scrollSpy from "react-scroll/modules/mixins/scroll-spy";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  // const [offset, setOffset] = useState(-80);
+  const [offset, setOffset] = useState(-80);
 
   // scroll handler
   useEffect(() => {
      scrollSpy.update(); 
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 1) {
         // 50px scroll হলে shadow show
         setScroll(true);
       } else {
@@ -30,19 +30,19 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 768) {
-  //       setOffset(-56); // Mobile navbar height
-  //     } else {
-  //       setOffset(-80); // Desktop navbar height
-  //     }
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setOffset(-56); // Mobile navbar height
+      } else {
+        setOffset(-80); // Desktop navbar height
+      }
+    };
 
-  //   handleResize(); // প্রথমবার রান করবে
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
+    handleResize(); // প্রথমবার রান করবে
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const links = [
     { to: "hero", name: "Home", icon: <HiHome size={20} /> },
@@ -77,6 +77,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                offset={offset}
                 activeClass="active-section"
                
                 className="cursor-pointer hover:text-[#7cf03d] 
@@ -131,7 +132,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-               
+               offset={offset}
                 className="flex items-center gap-3 hover:text-[#7cf03d] cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
