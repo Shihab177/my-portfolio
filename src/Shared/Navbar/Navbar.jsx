@@ -14,7 +14,7 @@ import scrollSpy from "react-scroll/modules/mixins/scroll-spy";
 const Navbar = () => {
   const [scroll, setScroll] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [offset, setOffset] = useState(-80);
+  // const [offset, setOffset] = useState(-80);
 
   // scroll handler
   useEffect(() => {
@@ -30,19 +30,19 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setOffset(-56); // Mobile navbar height
-      } else {
-        setOffset(-80); // Desktop navbar height
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 768) {
+  //       setOffset(-56); // Mobile navbar height
+  //     } else {
+  //       setOffset(-80); // Desktop navbar height
+  //     }
+  //   };
 
-    handleResize(); // প্রথমবার রান করবে
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   handleResize(); // প্রথমবার রান করবে
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   const links = [
     { to: "hero", name: "Home", icon: <HiHome size={20} /> },
@@ -78,7 +78,7 @@ const Navbar = () => {
                 duration={500}
                 spy={true}
                 activeClass="active-section"
-                offset={offset}
+               
                 className="cursor-pointer hover:text-[#7cf03d] 
                  text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] xl:text-[20px]"
               >
@@ -131,7 +131,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-                offset={offset}
+               
                 className="flex items-center gap-3 hover:text-[#7cf03d] cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >
