@@ -10,7 +10,7 @@ const Home = () => {
      
   return (
     <div>
-      <div className="md:h-20 h-[56px]"></div>
+      
       <Hero></Hero>
       <About></About>
       <Skills></Skills>
