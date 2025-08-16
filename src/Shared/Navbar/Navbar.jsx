@@ -131,7 +131,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
-                offset={-80}
+                offset={offset}
                 className="flex items-center gap-3 hover:text-[#7cf03d] cursor-pointer"
                 onClick={() => setMenuOpen(false)}
               >

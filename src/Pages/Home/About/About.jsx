@@ -19,7 +19,7 @@ const About = () => {
   ];
   return (
     <div className="">
-      <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4 flex flex-col-reverse lg:flex-row lg:gap-x-16 xl:gap-x-22">
+      <div id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pb-12 md:pb-8 pb-4 flex flex-col-reverse lg:flex-row lg:gap-x-16 xl:gap-x-22 pt-8 md:pt-0">
         <div className="lg:w-[40%] hidden lg:flex">
           <img
             className="rounded-md h-100 w-full mt-[100px] "
